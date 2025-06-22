@@ -44,3 +44,65 @@ Edit in `esp32_cam_server.ino`:
 ```cpp
 const char* ssid = "YourWiFiSSID";
 const char* password = "YourWiFiPassword";
+
+```
+
+## 🛠️ Setup Instructions
+### ESP32 Firmware
+
+    - Open esp32_cam_server.ino in Arduino IDE
+
+    - Select board: ESP32 Wrover Module
+
+    - Connect IO0 to GND to enter flash mode
+
+    - Upload via FTDI
+
+    - Disconnect IO0, press RST
+
+    - Open serial monitor → Get IP → Done 🎉
+
+### Frontend (Vite)
+```
+cd frontend
+npm install
+npm run dev
+```
+_**Visit: http://localhost:5173**_
+
+### 📸 Endpoints
+Endpoint	Description
+```
+/stream	MJPEG live video feed
+/capture	Returns a JPEG snapshot
+/flash	Toggles LED flash (10s max)
+```
+
+### 🗂 Folder Structure
+```
+smart-cam-dashboard/
+├── esp32_cam_server/       ← Arduino sketch
+└── frontend/               ← Vite + React dashboard
+```
+
+### 🚀 Roadmap
+
+- Supabase gallery for image storage
+
+- Motion detection via PIR sensor
+
+- OTA firmware updates
+
+- WebRTC or RTSP integration
+
+### 📜 License
+```
+MIT License
+```
+
+### 👨‍💻 Author
+
+Built by [Dantu Sai Kamal]
+
+---
+
